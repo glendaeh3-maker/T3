@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Operación Extracción</title>
+  <style>
+    html, body { margin: 0; overflow: hidden; background: #000; }
+    #crosshair { position: fixed; top: 50%; left: 50%; width: 6px; height: 6px;
+      margin: -3px; background: #fff; border-radius: 50%; pointer-events: none;
+      mix-blend-mode: difference; }
+    #hud { position: fixed; bottom: 24px; right: 32px; text-align: right;
+    font-family: 'Impact', 'Arial Narrow Bold', sans-serif; color: #fff;
+    text-shadow: 0 0 6px #000, 2px 2px 0 #000; pointer-events: none; }
+    #hud .nombre { font-size: 16px; letter-spacing: 3px; color: #ccc; text-transform: uppercase; }
+    #hud .cuenta { line-height: 1; }
+    #hud .actual { font-size: 64px; }
+    #hud .max    { font-size: 28px; color: #bbb; margin-left: 4px; }
+    #hud .barra  { width: 220px; height: 6px; margin: 6px 0 0 auto;
+    background: #fff3; border: 1px solid #fff5; }
+    #hud .barra i { display: block; height: 100%; background: #fff; transition: width .15s; }
+    #hud.vacio .actual, #hud.vacio .nombre { color: #ff3b3b; }
+    #hud.vacio .barra i { background: #ff3b3b; }
+    #hud.bajo .actual { color: #ffb020; }
+    #hud .msg { font-size: 14px; letter-spacing: 2px; color: #ffb020; height: 18px; }
+    #aviso { position: fixed; bottom: 90px; right: 24px; color: #7CFC00;
+  font: 18px monospace; opacity: 0; transition: opacity .3s; pointer-events: none; }
+    #inicio { position: fixed; inset: 0; display: flex; align-items: center;
+      justify-content: center; color: #fff; font: 28px monospace;
+      background: #000a; cursor: pointer; }
+    #vineta { position: fixed; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 45%, #000d 100%); }
+  </style>
+</head>
+<body>
+  <div id="inicio">Clic para jugar</div>
+  <div id="crosshair"></div>
+  <div id="hud"></div>
+  <div id="aviso"></div>
+  <div id="vineta"></div>
+
+  <script type="importmap">
+  { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  } }
+  </script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
