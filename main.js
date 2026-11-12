@@ -927,7 +927,7 @@ function chocaConMundo(x, z) {
   return false;
 }
 
-// Llegada a la extracción (provisional hasta tener enemigos)
+// Llegada a la extracción
 let misionCumplida = false;
 function revisarExtraccion() {
     if (juegoTerminado) return;
